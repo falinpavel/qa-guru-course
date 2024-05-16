@@ -24,7 +24,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.xpath;
 
-public class LoginTests {
+public class LoginTests extends LoginPage {
     @BeforeAll
     public static void setupBrowser() {
         Configuration.browser = "chrome";
@@ -34,19 +34,12 @@ public class LoginTests {
     @Test
     void successfulLoginTest() {
         open("https://school.qa.guru/cms/system/login"); // переход на страницу https://school.qa.guru/cms/system/login
-        SelenideElement entryIsVisible = $(xpath("//h2[contains(text(),'Войти')]"));
-            entryIsVisible.shouldHave(text("Войти")); // $ - поиск по xpath
-
-        SelenideElement email = $(By.xpath("//div[@class='field-input-block']/input[@class='form-control form-field-email']"));
-            email.clear();
-            email.sendKeys("falinpavel96@gmail.com");
-
-        SelenideElement password = $(By.xpath("//div//input[@class='form-control form-field-password']"));
-            password.clear();
-            password.sendKeys("2556535");
-
-        SelenideElement buttonEntry = $(xpath("//div/div/button[@class='xdget-block xdget-button btn btn-success']"));
-            buttonEntry.click();
+        entryIsVisible.shouldHave(text("Войти")); // $ - поиск по xpath
+        email.clear();
+        email.sendKeys("falinpavel96@gmail.com");
+        password.clear();
+        password.sendKeys("2556535");
+        buttonEntry.click();
     }
     @Test
     void unsuccessfulLoginTest() {
