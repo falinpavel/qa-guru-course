@@ -9,5 +9,8 @@
         <module name="qa-guru-corse" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="qa-guru-corse" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
