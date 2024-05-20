@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.xpath;
 
 public class LoginPage {
+    //SelenideElement baseButton = $(By.xpath("//div/a[contains(text(),'Личный кабинет') and @class='tn-atom']"));
     SelenideElement entryIsVisible = $(xpath("//h2[contains(text(),'Войти')]"));
     SelenideElement email = $(By.xpath("//div[@class='field-input-block']/input[@class='form-control form-field-email']"));
     SelenideElement password = $(By.xpath("//div//input[@class='form-control form-field-password']"));
